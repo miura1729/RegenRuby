@@ -26,7 +26,7 @@ extern "C" {
     std::string regstring = std::string(StringValueCStr(regstr));
     regen::Regex *r = new regen::Regex(regstring, 2);
     r->Compile(flag);
-    return Data_Wrap_Struct(cRegenRegexp, NULL, NULL, r);
+    return Data_Wrap_Struct(regen_cRegen, NULL, NULL, r);
   }
   
   VALUE

@@ -3,7 +3,7 @@ require 'benchmark'
 
 def matchtest(re, text, rep = 1000)
   rep.times do 
-    re.match(text)
+    re =~ text
   end
 end
 

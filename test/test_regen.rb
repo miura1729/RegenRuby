@@ -18,12 +18,12 @@ class RegenTest < Test::Unit::TestCase
   def test_regen
     ["a", "b", "aabba", "caa", "aab", "banana", "foo"].each do |str|
       @pattern_array.each_with_index do |pate, i|
-        except = Regexp.compile("^#{@pattern_raw[i]}$").match(str)
+        except = (Regexp.compile("^#{@pattern_raw[i]}$") =~ str)
         if except then
           except = true
         end
         pate.each do |pat|
-          assert_equal(pat.match(str), except)
+          assert_equal(pat =~ str, except)
         end
       end
     end

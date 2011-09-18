@@ -4,5 +4,4 @@
 #include "generator.h"
 #include "ruby.h"
 
-extern VALUE mRegen;
-extern VALUE cRegenRegexp;
+extern VALUE regen_cRegen;
