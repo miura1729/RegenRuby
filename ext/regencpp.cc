@@ -10,18 +10,28 @@ extern "C" {
     rb_scan_args(argc, argv, "11", &regstr, &flagv);
     switch (flagv) {
     case INT2FIX(-1):
-      flag = regen::Onone;
+    flag = regen::Onone;
+    break;
+
     case INT2FIX(0):
-      flag = regen::O0;
+    flag = regen::O0;
+    break;
+
     case INT2FIX(1):
-      flag = regen::O1;
+    flag = regen::O1;
+    break;
+
     case INT2FIX(2):
-      flag = regen::O2;
+    flag = regen::O2;
+    break;
+
     case INT2FIX(3):
-      flag = regen::O3;
+    flag = regen::O3;
+    break;
 
     default:
-      flag = regen::O2;
+    flag = regen::O2;
+    break;
     }
     std::string regstring = std::string(StringValueCStr(regstr));
     regen::Regex *r = new regen::Regex(regstring, 2);
