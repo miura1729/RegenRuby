@@ -43,7 +43,7 @@ extern "C" {
   regen_match(VALUE self, VALUE matstr) {
     std::string matstring = std::string(StringValueCStr(matstr));
     regen::Regex *rp = (regen::Regex *)DATA_PTR(self);
-    if (rp->FullMatch(matstring)) {
+    if (rp->Match(matstring)) {
       return Qtrue;
     } 
     else {
